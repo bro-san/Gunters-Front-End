@@ -1,9 +1,13 @@
 import React from 'react'
 
-function GameSearch() {
+function GameSearch({handleSearchChanges}) {
     return (
       <>
-     <input></input>
+     <input
+     type="text"
+        placeholder="Search Games"
+        onChange={(e) => handleSearchChange(e)}
+      />
      <button>Search</button>
       </>
     );
