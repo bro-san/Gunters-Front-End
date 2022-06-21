@@ -15,10 +15,14 @@ function GameContainer() {
 
   console.log(games)
 
+  const [searchText, setSearchText] = useState("")
+  function handleSearchChange(e){
+    setSearchText(e.target.value)
+  }
     return (
       <>
       <NewGameForm />
-       <GameSearch />
+      <GameSearch handleSearchChanges={handleSearchChange}/>
       <GameList games={games}/>
       </>
     );
