@@ -6,7 +6,7 @@ function GameSearch({handleSearchChanges}) {
      <input
      type="text"
         placeholder="Search Games"
-        onChange={(e) => handleSearchChange(e)}
+        onChange={(e) => handleSearchChanges(e)}
       />
      <button>Search</button>
       </>

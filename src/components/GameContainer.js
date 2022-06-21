@@ -16,14 +16,18 @@ function GameContainer() {
   console.log(games)
 
   const [searchText, setSearchText] = useState("")
-  function handleSearchChange(e){
+  function handleSearchChanges(e){
     setSearchText(e.target.value)
   }
+
+  const displayGames = games.filter((game) => {
+    return (game.name.toLowerCase().includes(searchText.toLowerCase()))
+  })  
     return (
       <>
       <NewGameForm />
-      <GameSearch handleSearchChanges={handleSearchChange}/>
-      <GameList games={games}/>
+      <GameSearch handleSearchChanges={handleSearchChanges}/>
+      <GameList games={displayGames}/>
       </>
     );
   }
