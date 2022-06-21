@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 function NewGameForm({ onAddGame }) {
    const [name, setName] = useState("");
@@ -17,7 +17,7 @@ function NewGameForm({ onAddGame }) {
             name: name,
             image: image,
             likes: likes,
-            description: description;
+            description: description,
          }),
       })
          .then((r) => r.json())
