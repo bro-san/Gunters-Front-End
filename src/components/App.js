@@ -1,9 +1,12 @@
-import './App.css';
+import React from 'react'
+import Header from "./Header"
+import GameContainer from "./GameContainer"
 
 function App() {
   return (
     <>
-    <div>hi</div>
+    <Header />
+    <GameContainer />
     </>
   );
 }
