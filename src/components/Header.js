@@ -7,7 +7,6 @@ function Header() {
      <h2>The Video-Game Oddities Community</h2>
         <nav>
             <a>Games</a>
-            <a>Search Bar</a>
             <a>Game Form</a>
         </nav>
       </>

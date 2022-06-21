@@ -18,8 +18,8 @@ function GameContainer() {
     return (
       <>
       <NewGameForm />
-      <GameList />
-      <GameSearch />
+       <GameSearch />
+      <GameList games={games}/>
       </>
     );
   }
