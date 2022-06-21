@@ -22,8 +22,8 @@ function GameContainer() {
     return (
       <>
       <NewGameForm />
-      <GameList />
       <GameSearch handleSearchChanges={handleSearchChange}/>
+      <GameList games={games}/>
       </>
     );
   }
