@@ -1,16 +1,19 @@
 import React from 'react'
+import { NavLink } from "react-router-dom"
 
 function Header() {
-    return (
-      <>
-     <h1>Gunters</h1>
-     <h2>The Video-Game Oddities Community</h2>
+
+  return (
+      <div>
+        <h1>Gunters</h1>
+        <h2>The Video-Game Oddities Community</h2>
         <nav>
-            <a>Games</a>
-            <a>Game Form</a>
+          <NavLink  to="/" exact >Home</NavLink>
+          <NavLink  to="/games" exact>Games</NavLink>
+          <NavLink  to="/add_new_game" exact>New Game</NavLink>
         </nav>
-      </>
-    );
-  }
-  
-  export default Header;
+      </div>
+  );
+}
+
+export default Header;
