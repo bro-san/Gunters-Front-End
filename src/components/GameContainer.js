@@ -6,7 +6,6 @@ import NewGameForm from './NewGameForm'
 function GameContainer() {
 
   const [games, setGames] = useState([])
-const [searchText, setSearchText] = useState("")
   useEffect(() => {
     fetch('http://localhost:3000/games')
     .then(resp => resp.json())
