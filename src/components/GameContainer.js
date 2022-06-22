@@ -6,7 +6,7 @@ import NewGameForm from './NewGameForm'
 function GameContainer() {
 
   const [games, setGames] = useState([])
-
+const [searchText, setSearchText] = useState("")
   useEffect(() => {
     fetch('http://localhost:3000/games')
     .then(resp => resp.json())
@@ -15,14 +15,14 @@ function GameContainer() {
 
   console.log(games)
 
-  const [searchText, setSearchText] = useState("")
-  function handleSearchChange(e){
+ 
+  function handleSearchChanges(e){
     setSearchText(e.target.value)
   }
     return (
       <>
       <NewGameForm />
-      <GameSearch handleSearchChanges={handleSearchChange}/>
+      <GameSearch handleSearchChanges={handleSearchChanges}/>
       <GameList games={games}/>
       </>
     );

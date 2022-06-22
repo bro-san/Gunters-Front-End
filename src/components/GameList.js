@@ -7,7 +7,7 @@ function GameList({games}) {
 
     return (
         <section>
-            <ul>
+            <ul className="cards">
             {games.map(game => {
                 return <GameCard game={game} key={game.id}/>
             })}
