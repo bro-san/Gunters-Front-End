@@ -21,7 +21,15 @@ function NewGameForm({ onAddGame }) {
          }),
       })
          .then((r) => r.json())
-         .then((newGame) => onAddGame(newGame));
+         .then((newGame) => onAddGame(newGame))
+         .then(() => {
+            setName("")
+            setImage("")
+            setLikes("")
+            setDescription("")
+         })
+         
+
    }
 
    return (
