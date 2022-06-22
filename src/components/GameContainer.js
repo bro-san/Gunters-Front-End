@@ -15,7 +15,7 @@ function GameContainer() {
 
   //console.log(games)
 
-  const onAddGames = (newGame) => {
+  const onAddGame = (newGame) => {
     const newGamesArray = [...games, newGame]
     setGames(newGamesArray)
   }
@@ -30,7 +30,7 @@ function GameContainer() {
   })  
     return (
       <>
-      <NewGameForm onAddGames={onAddGames}/>
+      <NewGameForm onAddGame={onAddGame}/>
       <GameSearch handleSearchChanges={handleSearchChanges}/>
       <GameList games={displayGames}/>
       </>
