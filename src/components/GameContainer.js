@@ -13,7 +13,12 @@ function GameContainer() {
     .then(data => setGames(data))
   }, [])
 
-  console.log(games)
+  //console.log(games)
+
+  const onAddGames = (newGame) => {
+    const newGamesArray = [...games, newGame]
+    setGames(newGamesArray)
+  }
 
   const [searchText, setSearchText] = useState("")
   function handleSearchChanges(e){
@@ -25,7 +30,7 @@ function GameContainer() {
   })  
     return (
       <>
-      <NewGameForm />
+      <NewGameForm onAddGames={onAddGames}/>
       <GameSearch handleSearchChanges={handleSearchChanges}/>
       <GameList games={displayGames}/>
       </>
