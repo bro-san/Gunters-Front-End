@@ -13,17 +13,27 @@ const [searchText, setSearchText] = useState("")
     .then(data => setGames(data))
   }, [])
 
-  console.log(games)
+  //console.log(games)
 
- 
+  const onAddGame = (newGame) => {
+    const newGamesArray = [...games, newGame]
+    setGames(newGamesArray)
+  }
+
+  const [searchText, setSearchText] = useState("")
   function handleSearchChanges(e){
     setSearchText(e.target.value)
   }
+
+  const displayGames = games.filter((game) => {
+    return (game.name.toLowerCase().includes(searchText.toLowerCase()))
+  })  
     return (
       <>
-      <NewGameForm />
+
+      <NewGameForm onAddGame={onAddGame}/>
       <GameSearch handleSearchChanges={handleSearchChanges}/>
-      <GameList games={games}/>
+      <GameList games={displayGames}/>
       </>
     );
   }

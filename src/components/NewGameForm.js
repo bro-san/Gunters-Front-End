@@ -8,7 +8,7 @@ function NewGameForm({ onAddGame }) {
 
    function handleSubmit(e) {
       e.preventDefault();
-      fetch("http://localhost:6001/plants", {
+      fetch("http://localhost:3000/games", {
          method: "POST",
          headers: {
             "Content-Type": "application/json",
@@ -21,7 +21,15 @@ function NewGameForm({ onAddGame }) {
          }),
       })
          .then((r) => r.json())
-         .then((newGame) => onAddGame(newGame));
+         .then((newGame) => onAddGame(newGame))
+         .then(() => {
+            setName("")
+            setImage("")
+            setLikes("")
+            setDescription("")
+         })
+         
+
    }
 
    return (

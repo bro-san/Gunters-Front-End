@@ -1,20 +1,20 @@
 {
-   "games": [
-     {
-       "id": 1,
-       "name": "Elder Scrolls 5: Skyrim",
-       "image": "https://assets-prd.ignimgs.com/2021/08/19/elder-scrolls-skyrim-button-2017-1629409446732.jpg?width=300&crop=1%3A1%2Csmart",
-       "likes": 8,
-       "description": "The Elder Scrolls V: Skyrim is an action role-playing game, playable from either a first or third-person perspective. The player may freely roam over the land of Skyrim, an open world environment consisting of wilderness expanses, dungeons, caves, cities, towns, fortresses, and villages."
-     },
-     {
-       "id": 2,
-       "name": "Grand Theft Auto V",
-       "image": "https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png",
-       "likes": 14,
-       "description": "Grand Theft Auto V is an action-adventure game played from either a third-person or first-person perspective. Players complete missions—linear scenarios with set objectives—to progress through the story. Outside of the missions, players may freely roam the open world."
-     },
-     {
+  "games": [
+    {
+      "id": 1,
+      "name": "Elder Scrolls 5: Skyrim",
+      "image": "https://assets-prd.ignimgs.com/2021/08/19/elder-scrolls-skyrim-button-2017-1629409446732.jpg?width=300&crop=1%3A1%2Csmart",
+      "likes": 8,
+      "description": "The Elder Scrolls V: Skyrim is an action role-playing game, playable from either a first or third-person perspective. The player may freely roam over the land of Skyrim, an open world environment consisting of wilderness expanses, dungeons, caves, cities, towns, fortresses, and villages."
+    },
+    {
+      "id": 2,
+      "name": "Grand Theft Auto V",
+      "image": "https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png",
+      "likes": 14,
+      "description": "Grand Theft Auto V is an action-adventure game played from either a third-person or first-person perspective. Players complete missions—linear scenarios with set objectives—to progress through the story. Outside of the missions, players may freely roam the open world."
+    },
+    {
       "id": 3,
       "name": "The Last Of Us",
       "image": "https://cmon-files.s3.amazonaws.com/images/news/image_social/753/TLOU_press-release_Social3.jpg",
@@ -69,6 +69,20 @@
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/capsule_616x353.jpg?t=1618851907",
       "likes": 14,
       "description": "Set in a fictional recreation of the American Old West in 1899, Red Dead Redemption 2 focuses on the life of Arthur Morgan and his position in the notorious Van der Linde gang. The game follows the gang's decline as they are pursued by lawmen, fellow gangs and Pinkerton agents."
+    },
+    {
+      "name": "daisy",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Leucanthemum_vulgare_%27Filigran%27_Flower_2200px.jpg/1200px-Leucanthemum_vulgare_%27Filigran%27_Flower_2200px.jpg",
+      "likes": 1,
+      "description": "test",
+      "id": 11
+    },
+    {
+      "name": "Jason Ranjo",
+      "image": "https://www.morganlewis.com/-/media/person-images/r/ranjo_jason_74247_desktop.jpg",
+      "likes": -3,
+      "description": "test",
+      "id": 12
     }
-   ]
- }
+  ]
+}
