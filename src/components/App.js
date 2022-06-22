@@ -30,7 +30,7 @@ function App() {
         </Route>
 
         <Route path="/add">
-          <NewGameForm />
+          <NewGameForm onAddGame={onAddGame}/>
         </Route>
 
         <Route exact path="/">
