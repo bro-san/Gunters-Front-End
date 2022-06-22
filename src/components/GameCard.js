@@ -4,7 +4,7 @@ function GameCard({game}) {
 
     const {name, image, description, likes } = game
     return (
-        <li>
+        <li className='card'>
             
             <div>
                 <h4>{name}</h4>
