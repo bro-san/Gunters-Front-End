@@ -18,6 +18,9 @@ function App() {
     const newGamesArray = [...games, newGame]
     setGames(newGamesArray)
   }
+  const homeGame = games[games.length-1]
+  console.log("testing:", homeGame)
+
   return (
     <div>
 
@@ -34,7 +37,7 @@ function App() {
         </Route>
 
         <Route exact path="/">
-          <Home />
+          <Home game={homeGame}/>
         </Route>
 
          <Route path="*">

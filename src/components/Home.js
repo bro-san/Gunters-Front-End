@@ -1,7 +1,14 @@
+import React from "react"
+import GameCard from "./GameCard"
 
-function Home() {
+function Home({game}) {
+    console.log("this:", game)
     return(
-        <h1>Latest Game</h1>
+        <div>
+             <h1>Check Out The Community's Latest Game:</h1>
+            <GameCard game={game}/>
+        </div>
+
     )
 }
 
