@@ -30,7 +30,7 @@ Not done yet. Still working on PATCHing/editing game details and easter eggs
 
 ## Current App Structure
 ### Site Map / Client-side Routing
-<img src="./public/site_map.png" alt="image of site map">
+<img src="./public/Site_Map.png" alt="image of site map">
 
 ### React Component Tree
 <img src="./public/React_component_tree.png" alt="image of React component tree">
