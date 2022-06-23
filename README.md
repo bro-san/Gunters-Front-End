@@ -22,8 +22,10 @@ $ npm start
 ```
 
 ## User Features
-1) User can browse and search/filter games in the persistent db.json backend
-2) User can POST name-video game entry to the persistent db.json backend via form submission
+1) User can browse and search/filter games in the persistent db.json backend;
+2) User can POST name-video game entry to the persistent db.json backend via form submission;
+3) User can like or dislike a game entry that PATCHes persistently to db.json backend;
+4) User can DELETE a game entry persistently from db.json backend;
 
 ## Project Status
 Not done yet. Still working on PATCHing/editing game details and easter eggs
