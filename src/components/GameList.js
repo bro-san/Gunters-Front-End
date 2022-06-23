@@ -1,7 +1,7 @@
 import React from 'react'
 import GameCard from './GameCard';
 
-function GameList({games}) {
+function GameList({games, onHandleDelete, onUpdatePatch, onDecrementPatch}) {
 
 
 
@@ -9,7 +9,7 @@ function GameList({games}) {
         <section>
             <ul className="cards">
             {games.map(game => {
-                return <GameCard game={game} key={game.id}/>
+                return <GameCard onDecrementPatch={onDecrementPatch} onUpdatePatch={onUpdatePatch} game={game} key={game.id} onHandleDelete={onHandleDelete}/>
             })}
             </ul>
         </section>

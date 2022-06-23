@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import GameList from './GameList'
 import GameSearch from './GameSearch'
 
-function Games({games}) {
+function Games( {games, onHandleDelete, onUpdatePatch, onDecrementPatch, } ) {
     // const [games, setGames] = useState([])
 
     // useEffect(() => {
@@ -24,7 +24,7 @@ function Games({games}) {
     return (
         <div>
             <GameSearch handleSearchChanges={handleSearchChanges} />
-            <GameList games={displayGames} />
+            <GameList onDecrementPatch={onDecrementPatch} games={displayGames} onHandleDelete={onHandleDelete} onUpdatePatch={onUpdatePatch}/>
         </div>
 
     )
