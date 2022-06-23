@@ -9,12 +9,13 @@ import Typography from '@mui/material/Typography';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbDownIcon from '@mui/icons-material/ThumbDown';
+import {Link} from "react-router-dom"
 
 function GameCard({ game, onHandleDelete, onUpdatePatch, onDecrementPatch }) {
 
-    const { name, image, description, likes, id } = game
-   
-    function addLikes(e) {
+    const {name, image, likes, id } = game
+    
+    function addLikes(e){
         console.log(e.target.textContent)
 
         const updateObj = {
@@ -60,7 +61,8 @@ function GameCard({ game, onHandleDelete, onUpdatePatch, onDecrementPatch }) {
     }
 
     return (
-        <Card sx={{ maxWidth: 345 }}>
+
+      <Card sx={{ maxWidth: 345 }}>
             <div className="cards">
                 <li className='card'>
 
@@ -72,12 +74,10 @@ function GameCard({ game, onHandleDelete, onUpdatePatch, onDecrementPatch }) {
                     maxheight={100}
                 />
                 <h3>Description:</h3>
-                <CardContent>
-                   
-                    <Typography variant='body2' color="text.secondary">
-                        {description}
-                    </Typography>
-                </CardContent>
+
+            //    <CardContent>
+            //    </CardContent>
+
                 <CardActions disableSpacing>
                     <IconButton variant="contained" color='success' onClick={addLikes}><ThumbUpIcon /></IconButton>
                     <IconButton variant="contained" color='error' onClick={subtractLikes}><ThumbDownIcon /></IconButton>
@@ -89,8 +89,19 @@ function GameCard({ game, onHandleDelete, onUpdatePatch, onDecrementPatch }) {
             
         </Card>
 
-
-
+        <li className='card'>
+            <div>
+                <h4>{name}</h4>
+                <img src={image} alt={name} />
+            </div>
+            <div>
+                <button onClick={addLikes}>Like</button>
+                <button onClick={subtractLikes}>Dislike</button>
+                <p>{likes}</p>
+                <Link to={`/${id}/GameDetail`}>Details</Link>
+                <button onClick={handleClick}>Delete</button>
+            </div>
+        </li>
     );
 }
 

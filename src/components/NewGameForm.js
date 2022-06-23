@@ -20,6 +20,7 @@ function NewGameForm({ onAddGame }) {
             image: image,
             likes: likes,
             description: description,
+            easterEggs: [],
          }),
       })
          .then((r) => r.json())

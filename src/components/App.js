@@ -4,6 +4,7 @@ import NavBar from "./NavBar"
 import Home from "./Home"
 import Games from "./Games"
 import NewGameForm from "./NewGameForm"
+import GameDetail from "./GameDetail";
 import "../App.css"
 
 function App() {
@@ -20,6 +21,17 @@ function App() {
     setGames(newGamesArray)
   }
   
+  const onAddEgg = (updatedGame) => {
+    const updatedGames = games.map((ogGame) => {
+      if (ogGame.id === updatedGame.id) {
+        return updatedGame;
+      } else {
+        return ogGame;
+      }
+    });
+    setGames(updatedGames);
+  };
+
   function handleDelete(id) {
     const deleteCard = games.filter(game => game.id !== id)
     setGames(deleteCard)
@@ -51,6 +63,10 @@ function App() {
 
         <Route path="/add">
           <NewGameForm onAddGame={onAddGame}/>
+        </Route>
+
+        <Route path="/:id/GameDetail">
+          <GameDetail onAddEgg={onAddEgg}/>
         </Route>
 
         <Route exact path="/">
