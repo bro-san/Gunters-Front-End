@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react'
+import {Link} from "react-router-dom"
 
 function GameCard( {game, onHandleDelete, onUpdatePatch, onDecrementPatch} ) {
 
@@ -60,11 +61,11 @@ function GameCard( {game, onHandleDelete, onUpdatePatch, onDecrementPatch} ) {
                 <p>{description}</p>
                 <button onClick={addLikes}>Likes</button>
                 <button onClick={subtractLikes}>Dislike</button>
-                <button onClick={handleClick}>Delete</button>
                 <p>{likes}</p>
+                <Link to={`/${id}/GameDetail`} onClick={console.log("go to details game")}>Details</Link>
+                <button onClick={handleClick}>Delete</button>
             </div>
         </li>
-
     );
 }
 

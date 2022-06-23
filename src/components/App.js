@@ -4,6 +4,7 @@ import NavBar from "./NavBar"
 import Home from "./Home"
 import Games from "./Games"
 import NewGameForm from "./NewGameForm"
+import GameDetail from "./GameDetail";
 import "../App.css"
 
 function App() {
@@ -51,6 +52,10 @@ function App() {
 
         <Route path="/add">
           <NewGameForm onAddGame={onAddGame}/>
+        </Route>
+
+        <Route path="/:id/GameDetail">
+          <GameDetail />
         </Route>
 
         <Route exact path="/">
