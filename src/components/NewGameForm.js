@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import TextField from "@mui/material/TextField";
 
 function NewGameForm({ onAddGame }) {
    const [name, setName] = useState("");
@@ -23,50 +24,53 @@ function NewGameForm({ onAddGame }) {
          .then((r) => r.json())
          .then((newGame) => onAddGame(newGame))
          .then(() => {
-            setName("")
-            setImage("")
-            setLikes("")
-            setDescription("")
-         })
-         
-
+            setName("");
+            setImage("");
+            setLikes("");
+            setDescription("");
+         });
    }
 
    return (
       <div className='new-game-form'>
          <h2>New Game</h2>
-         <form onSubmit={handleSubmit}>
-            <input
-               type='text'
-               name='name'
-               placeholder='Game name'
-               value={name}
-               onChange={(e) => setName(e.target.value)}
-            />
-            <input
-               type='text'
-               name='image'
-               placeholder='Image URL'
-               value={image}
-               onChange={(e) => setImage(e.target.value)}
-            />
-            <input
-               type='number'
-               name='likes'
-               step='1'
-               placeholder='Likes'
-               value={likes}
-               onChange={(e) => setLikes(parseFloat(e.target.value))}
-            />
-            <input
-               type='text'
-               name='description'
-               placeholder='Game description'
-               value={description}
-               onChange={(e) => setDescription(e.target.value)}
-            />
-            <button type='submit'>Add Game</button>
-         </form>
+         onSubmit={handleSubmit}>
+         <TextField
+            required
+            id='outlined-required'
+            label='Game Name'
+            type='search'
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+         />
+         <TextField
+            required
+            id='outlined-helperText'
+            label='Image'
+            defaultValue='Default Value'
+            helperText='Enter URL'
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
+         />
+         <TextField
+            id='outlined-number'
+            label='Likes'
+            type='number'
+            InputLabelProps={{
+               shrink: true,
+            }}
+            value={likes}
+            onChange={(e) => setLikes(parseFloat(e.target.value))}
+         />
+         <TextField
+            required
+            id='outlined-search'
+            label='Game Description'
+            type='search'
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+         />
+         <button type='submit'>Add Game</button>
       </div>
    );
 }
