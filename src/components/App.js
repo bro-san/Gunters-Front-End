@@ -14,23 +14,29 @@ function App() {
           .then(resp => resp.json())
           .then(data => setGames(data))
   }, [])
+  
   const onAddGame = (newGame) => {
     const newGamesArray = [...games, newGame]
     setGames(newGamesArray)
   }
+  
   function handleDelete(id) {
     const deleteCard = games.filter(game => game.id !== id)
     setGames(deleteCard)
   }
+  
   function updatePatch(obj) {
     const patchRequest = games.map(game => game.id === obj.id ? obj : game);
     setGames(patchRequest)
   }
+  
   function decrementPatch(obj) {
     const patchRequest = games.map(game => game.id === obj.id ? obj : game);
     setGames(patchRequest)
   }
   
+  const homeGame = games[games.length-1]
+  console.log("testing:", homeGame)
 
   return (
     <div>
@@ -48,7 +54,7 @@ function App() {
         </Route>
 
         <Route exact path="/">
-          <Home />
+          <Home game={homeGame}/>
         </Route>
 
          <Route path="*">
