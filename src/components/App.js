@@ -55,7 +55,7 @@ function App() {
         </Route>
 
         <Route path="/:id/GameDetail">
-          <GameDetail />
+          <GameDetail onHandleDelete={handleDelete} onUpdatePatch={updatePatch} onDecrementPatch={decrementPatch}/>
         </Route>
 
         <Route exact path="/">

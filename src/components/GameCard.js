@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 
 function GameCard( {game, onHandleDelete, onUpdatePatch, onDecrementPatch} ) {
 
-    const {name, image, description, likes, id } = game
+    const {name, image, likes, id } = game
     
     function addLikes(e){
         console.log(e.target.textContent)
@@ -57,12 +57,10 @@ function GameCard( {game, onHandleDelete, onUpdatePatch, onDecrementPatch} ) {
                 <img src={image} alt={name} />
             </div>
             <div>
-                <h3>Description:</h3>
-                <p>{description}</p>
-                <button onClick={addLikes}>Likes</button>
+                <button onClick={addLikes}>Like</button>
                 <button onClick={subtractLikes}>Dislike</button>
                 <p>{likes}</p>
-                <Link to={`/${id}/GameDetail`} onClick={console.log("go to details game")}>Details</Link>
+                <Link to={`/${id}/GameDetail`}>Details</Link>
                 <button onClick={handleClick}>Delete</button>
             </div>
         </li>
