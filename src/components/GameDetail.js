@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-const GameDetail = () => {
+const GameDetail = ({onHandleDelete, onUpdatePatch, onDecrementPatch}) => {
    const [game, setGame] = useState(null);
    const [isLoaded, setIsLoaded] = useState(false);
 
@@ -20,19 +20,64 @@ const GameDetail = () => {
 
    const { name, image, description, likes } = game;
 
+   function addLikes(e){
+      console.log(e.target.textContent)
+    
+          const updateObj = {
+          likes : likes + 1
+      }
+           fetch(`http://localhost:3000/games/${id}`, {
+          method: "PATCH",
+          headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json",
+           },
+           body: JSON.stringify(updateObj)
+      })
+      .then(res => res.json())
+      .then(data => onUpdatePatch(data))
+      }
+
+   function subtractLikes(e){
+         console.log(e.target)
+         const updateObj = {
+            likes : likes - 1
+         }
+
+               fetch(`http://localhost:3000/games/${id}`, {
+            method: "PATCH",
+            headers: {
+               "Content-Type": "application/json",
+               "Accept": "application/json",
+            },
+            body: JSON.stringify(updateObj)
+         })
+         .then(res => res.json())
+         .then(data => onDecrementPatch(data))
+         }
+  
+  function handleClick(){
+      fetch(`http://localhost:3000/games/${id}`, {
+          method:"DELETE"
+      })
+      onHandleDelete(id)
+  }
+
    return (
-      <section>
-         <div className='project-detail box'>
-            <div className='project-image'>
-               <img src={image} alt={name} />
-            </div>
-            <div className='details'>
-               <h2>{name}</h2>
-               <p>{description}</p>
-               <button>Likes: {likes}</button>
-            </div>
-         </div>
-      </section>
+   <>
+      <div>
+         <h4>{name}</h4>
+         <img src={image} alt={name} />
+      </div>
+      <div>
+         <h3>Description:</h3>
+         <p>{description}</p>
+         <button onClick={addLikes}>Likes</button>
+         <button onClick={subtractLikes}>Dislike</button>
+         <p>{likes}</p>
+         <button onClick={handleClick}>Delete</button>
+      </div>
+   </>
    );
 };
 
