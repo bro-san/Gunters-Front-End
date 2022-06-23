@@ -57,7 +57,7 @@ function App() {
           <Home game={homeGame}/>
         </Route>
 
-         <Route path="*">
+         <Route exact path="*">
           <h1>NOT FOUND!</h1>
         </Route> 
         

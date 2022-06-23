@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import GameList from './GameList'
 import GameSearch from './GameSearch'
 
-function Games( {games, onHandleDelete, onUpdatePatch, onDecrementPatch, } ) {
+function Games( {games, onHandleDelete, onUpdatePatch, onDecrementPatch} ) {
     // const [games, setGames] = useState([])
 
     // useEffect(() => {

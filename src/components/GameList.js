@@ -6,15 +6,12 @@ function GameList({games, onHandleDelete, onUpdatePatch, onDecrementPatch}) {
 
 
     return (
-        <section>
-            <ul className="cards">
+     
+            <ul>
             {games.map(game => {
                 return <GameCard onDecrementPatch={onDecrementPatch} onUpdatePatch={onUpdatePatch} game={game} key={game.id} onHandleDelete={onHandleDelete}/>
             })}
             </ul>
-        </section>
-   
-     
     );
   }
   
