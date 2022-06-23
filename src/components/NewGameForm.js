@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import TextField from '@mui/material/TextField';
+import { Button } from "@mui/material";
 
 function NewGameForm({ onAddGame }) {
    const [name, setName] = useState("");
@@ -29,29 +31,33 @@ function NewGameForm({ onAddGame }) {
             setLikes("")
             setDescription("")
          })
-         
-
    }
 
    return (
       <div className='new-game-form'>
          <h2>New Game</h2>
-         <form onSubmit={handleSubmit}>
-            <input
-               type='text'
+         <form onSubmit={handleSubmit} className="form">
+            <label>Title:</label>
+            <TextField
+           
+            type="text"
+            label="Title"
+             
                name='name'
                placeholder='Game name'
                value={name}
                onChange={(e) => setName(e.target.value)}
             />
-            <input
+            <label>Image:</label>
+            <TextField
                type='text'
                name='image'
                placeholder='Image URL'
                value={image}
                onChange={(e) => setImage(e.target.value)}
             />
-            <input
+            <label>Likes:</label>
+            <TextField
                type='number'
                name='likes'
                step='1'
@@ -59,14 +65,15 @@ function NewGameForm({ onAddGame }) {
                value={likes}
                onChange={(e) => setLikes(parseFloat(e.target.value))}
             />
-            <input
+            <label>Description:</label>
+            <TextField
                type='text'
                name='description'
                placeholder='Game description'
                value={description}
                onChange={(e) => setDescription(e.target.value)}
             />
-            <button type='submit'>Add Game</button>
+            <Button id="submit-button" variant="contained">Submit</Button>
          </form>
       </div>
    );

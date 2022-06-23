@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Elder Scrolls 5: Skyrim",
       "image": "https://assets-prd.ignimgs.com/2021/08/19/elder-scrolls-skyrim-button-2017-1629409446732.jpg?width=300&crop=1%3A1%2Csmart",
-      "likes": 20,
+      "likes": 22,
       "description": "The Elder Scrolls V: Skyrim is an action role-playing game, playable from either a first or third-person perspective. The player may freely roam over the land of Skyrim, an open world environment consisting of wilderness expanses, dungeons, caves, cities, towns, fortresses, and villages."
     },
     {
@@ -69,13 +69,6 @@
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/capsule_616x353.jpg?t=1618851907",
       "likes": 15,
       "description": "Set in a fictional recreation of the American Old West in 1899, Red Dead Redemption 2 focuses on the life of Arthur Morgan and his position in the notorious Van der Linde gang. The game follows the gang's decline as they are pursued by lawmen, fellow gangs and Pinkerton agents."
-    },
-    {
-      "name": "daisy",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Leucanthemum_vulgare_%27Filigran%27_Flower_2200px.jpg/1200px-Leucanthemum_vulgare_%27Filigran%27_Flower_2200px.jpg",
-      "likes": 2,
-      "description": "test",
-      "id": 11
     }
   ]
 }

@@ -1,27 +1,82 @@
-body {
-    
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.last-game{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+ .cards {
+    display: grid;
+    grid-template-columns: auto auto auto;
+} 
+
+.card {
+    background-color:beige ;
+   
+}  
+.search-input {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }
 
 .nav-bar {
-    background-color: bisque;
+    background-color: rgb(92, 94, 98);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
 }
 
-.card img {
-    width: 70%;
+.nav-title{
+    background-image: linear-gradient(to left, #ffb5e8, #b28dff, #dcd3ff,  #ffc9de, #6eb5ff);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
-.cards {
-    margin: 0 auto;
-  list-style: none;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.5rem;
+.link{
+    color: white;
+    text-decoration: none;
 }
 
-.card {
-    max-width: 400px;
+#outlined-basic {
+    border-top-left-radius: 19px;
+    border-bottom-left-radius: 19px;
+    outline: none;
+    background-image: url("https://cdn.discordapp.com/attachments/988529483667607562/989621307584942080/unknown.png");
+    width: 800px;
+    color: white;
+}
+#search-button{
+    border-top-right-radius: 19px;
+    border-bottom-right-radius: 19px;
+    background-image: linear-gradient(to left, #ffb5e8, #b28dff, #dcd3ff,  #ffc9de, #6eb5ff);
+    color: black;
+}
+#submit-button{
+    background-image: linear-gradient(to left, #ffb5e8, #b28dff, #dcd3ff,  #ffc9de, #6eb5ff);
+    color: black;
+}
+.new-game-form{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form {
+    
     display: grid;
-    grid-template-rows: auto 1fr auto;
-    border: 2px solid black;
+    gap: 10px;
 }

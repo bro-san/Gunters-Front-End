@@ -1,15 +1,18 @@
 import React from 'react'
+import TextField from '@mui/material/TextField';
+import { Button } from '@mui/material';
 
 function GameSearch({handleSearchChanges}) {
     return (
-      <>
-     <input
+      <div className="search-input">
+     <TextField
+     id="outlined-basic"
      type="text"
-        placeholder="Search Games"
+     label="Search Game"
         onChange={(e) => handleSearchChanges(e)}
       />
-     <button>Search</button>
-      </>
+     <Button id="search-button" variant="contained">Search</Button>
+      </div>
     );
   }
   
