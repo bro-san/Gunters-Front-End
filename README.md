@@ -9,7 +9,7 @@
 * [Current App Structure](#current-app-structure)
 
 ## Intro 
-We created this app to provide a community forum for browsing video game titles and discussing video-game easter eggs. We built it using React.js (18.2.0), including react-router-dom (5.3.0), as we wanted to practice React and improve our client-routing skills while attending the Flatiron School's software engineering course. 
+We created this app to provide a community forum for browsing video game titles and discussing video-game easter eggs. We built it using React.js (18.2.0), STYLE PACKAGE, and react-router-dom (5.3.0), as we wanted to practice React and improve our client-routing skills while attending the Flatiron School's software engineering course. 
 
 ## Setup / Launch
     1) Use Heroku
@@ -35,4 +35,21 @@ Not done yet. Still working on PATCHing/editing game details and easter eggs
 <img src="./public/Site_Map.png" alt="image of site map">
 
 ### React Component Tree
-<img src="./public/React_component_tree.png" alt="image of React component tree">
+```
+App.js
+|
++-- NavBar.js
+|    
++-- Home.js
+|  |  
+|  +-- GameCard.js
+|    
++-- Games.js
+|  |  
+|  +-- GameSearch.js
+|  +-- GameList.js
+|       |  
+|       +--GameCard.js
+|    
++-- NewGameForm.js
+```
