@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-const GameDetail = ({onHandleDelete, onUpdatePatch, onDecrementPatch}) => {
+const GameDetail = ({onAddEgg}) => {
    const [game, setGame] = useState(null);
    const [isLoaded, setIsLoaded] = useState(false);
+   const [eggText, setEggText] = useState("");
 
    const { id } = useParams();
 
@@ -18,50 +19,30 @@ const GameDetail = ({onHandleDelete, onUpdatePatch, onDecrementPatch}) => {
 
    if (!isLoaded) return <h2>Loading...</h2>;
 
-   const { name, image, description, likes } = game;
+   const { name, image, description, easterEggs } = game;
 
-   function addLikes(e){
-      console.log(e.target.textContent)
-    
-          const updateObj = {
-          likes : likes + 1
-      }
-           fetch(`http://localhost:3000/games/${id}`, {
-          method: "PATCH",
-          headers: {
-              "Content-Type": "application/json",
-              "Accept": "application/json",
-           },
-           body: JSON.stringify(updateObj)
-      })
-      .then(res => res.json())
-      .then(data => onUpdatePatch(data))
-      }
-
-   function subtractLikes(e){
-         console.log(e.target)
-         const updateObj = {
-            likes : likes - 1
-         }
-
-               fetch(`http://localhost:3000/games/${id}`, {
-            method: "PATCH",
-            headers: {
-               "Content-Type": "application/json",
-               "Accept": "application/json",
-            },
-            body: JSON.stringify(updateObj)
-         })
-         .then(res => res.json())
-         .then(data => onDecrementPatch(data))
-         }
-  
-  function handleClick(){
+   function handleSubmit(e) {
+      e.preventDefault();
+      const newEggs = [...easterEggs, eggText]
       fetch(`http://localhost:3000/games/${id}`, {
-          method:"DELETE"
+         method: "PATCH",
+         headers: {
+            "Content-Type": "application/json",
+         },
+         body: JSON.stringify({
+            easterEggs: newEggs,
+         }),
       })
-      onHandleDelete(id)
-  }
+         .then((r) => r.json())
+         .then((updatedGame) => onAddEgg(updatedGame))
+         .then(() => {
+            setEggText("")
+         })
+      }
+
+      const eggDisplay = easterEggs.map(egg => {
+         return(<li>{egg}</li>)
+      })
 
    return (
    <>
@@ -72,10 +53,22 @@ const GameDetail = ({onHandleDelete, onUpdatePatch, onDecrementPatch}) => {
       <div>
          <h3>Description:</h3>
          <p>{description}</p>
-         <button onClick={addLikes}>Likes</button>
-         <button onClick={subtractLikes}>Dislike</button>
-         <p>{likes}</p>
-         <button onClick={handleClick}>Delete</button>
+         <h2>Easter Eggs Found:</h2>
+         <ul>
+            {eggDisplay}
+         </ul>
+         <h2>Submit a New Easter Egg!</h2>
+         <form onSubmit={handleSubmit}>
+            <input
+               type='text'
+               name='easterEgg'
+               placeholder='Add an egg!'
+               value={eggText}
+               onChange={(e) => setEggText(e.target.value)}
+            />
+            <button type='submit'>Add Egg</button>
+         </form>
+
       </div>
    </>
    );

@@ -21,6 +21,17 @@ function App() {
     setGames(newGamesArray)
   }
   
+  const onAddEgg = (updatedGame) => {
+    const updatedGames = games.map((ogGame) => {
+      if (ogGame.id === updatedGame.id) {
+        return updatedGame;
+      } else {
+        return ogGame;
+      }
+    });
+    setGames(updatedGames);
+  };
+
   function handleDelete(id) {
     const deleteCard = games.filter(game => game.id !== id)
     setGames(deleteCard)
@@ -55,7 +66,7 @@ function App() {
         </Route>
 
         <Route path="/:id/GameDetail">
-          <GameDetail onHandleDelete={handleDelete} onUpdatePatch={updatePatch} onDecrementPatch={decrementPatch}/>
+          <GameDetail onAddEgg={onAddEgg}/>
         </Route>
 
         <Route exact path="/">
