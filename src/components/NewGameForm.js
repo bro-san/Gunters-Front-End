@@ -73,7 +73,7 @@ function NewGameForm({ onAddGame }) {
                value={description}
                onChange={(e) => setDescription(e.target.value)}
             />
-            <Button id="submit-button" variant="contained">Submit</Button>
+            <button id="submit-button" variant="contained">Submit</button>
          </form>
       </div>
    );

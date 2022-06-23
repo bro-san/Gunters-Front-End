@@ -61,7 +61,7 @@ function GameCard({ game, onHandleDelete, onUpdatePatch, onDecrementPatch }) {
     }
 
     return (
-
+        <>
       <Card sx={{ maxWidth: 345 }}>
             <div className="cards">
                 <li className='card'>
@@ -73,11 +73,9 @@ function GameCard({ game, onHandleDelete, onUpdatePatch, onDecrementPatch }) {
                     alt={name}
                     maxheight={100}
                 />
-                <h3>Description:</h3>
-
-            //    <CardContent>
-            //    </CardContent>
-
+               {/* <CardContent>
+               </CardContent> */}
+                <Link to={`/${id}/GameDetail`}>Details</Link>
                 <CardActions disableSpacing>
                     <IconButton variant="contained" color='success' onClick={addLikes}><ThumbUpIcon /></IconButton>
                     <IconButton variant="contained" color='error' onClick={subtractLikes}><ThumbDownIcon /></IconButton>
@@ -85,11 +83,12 @@ function GameCard({ game, onHandleDelete, onUpdatePatch, onDecrementPatch }) {
                 </CardActions>
                 <IconButton aria-label="delete" size="large" onClick={handleClick}><DeleteIcon fontSize='inherit' /></IconButton>
             </li>
+            
             </div>
             
         </Card>
 
-        <li className='card'>
+        {/* <li className='card'>
             <div>
                 <h4>{name}</h4>
                 <img src={image} alt={name} />
@@ -101,7 +100,8 @@ function GameCard({ game, onHandleDelete, onUpdatePatch, onDecrementPatch }) {
                 <Link to={`/${id}/GameDetail`}>Details</Link>
                 <button onClick={handleClick}>Delete</button>
             </div>
-        </li>
+        </li> */}
+        </>
     );
 }
 
