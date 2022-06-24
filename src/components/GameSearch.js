@@ -5,8 +5,9 @@ import { Button } from '@mui/material';
 function GameSearch({handleSearchChanges}) {
     return (
       <div className="search-input">
+        
      <TextField
-     id="outlined-basic"
+     className="outlined-basic"
      type="text"
      label="Search Game"
         onChange={(e) => handleSearchChanges(e)}

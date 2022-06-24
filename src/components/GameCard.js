@@ -61,10 +61,11 @@ function GameCard({ game, onHandleDelete, onUpdatePatch, onDecrementPatch }) {
     }
 
     return (
-        <>
-      <Card sx={{ maxWidth: 345 }}>
-            <div className="cards">
-                <li className='card'>
+       <>
+        <div className='card'>
+            <Card  id='fix-card' >
+            
+                <li >
 
                 <CardHeader title={name}></CardHeader>
                 <CardMedia
@@ -76,17 +77,19 @@ function GameCard({ game, onHandleDelete, onUpdatePatch, onDecrementPatch }) {
                {/* <CardContent>
                </CardContent> */}
                 <Link to={`/${id}/GameDetail`}>Details</Link>
-                <CardActions disableSpacing>
-                    <IconButton variant="contained" color='success' onClick={addLikes}><ThumbUpIcon /></IconButton>
-                    <IconButton variant="contained" color='error' onClick={subtractLikes}><ThumbDownIcon /></IconButton>
-                    <p>{likes}</p>
-                </CardActions>
-                <IconButton aria-label="delete" size="large" onClick={handleClick}><DeleteIcon fontSize='inherit' /></IconButton>
-            </li>
-            
-            </div>
-            
+                <div className='div-wrapper'>
+                    <IconButton id='like' variant="contained" color='success' onClick={addLikes}><ThumbUpIcon /></IconButton>
+                    <IconButton id='dislike' variant="contained" color='error' onClick={subtractLikes}><ThumbDownIcon /></IconButton>
+                    
+                
+                <p className='likes-counter'>{likes}</p>
+                </div>
+                    
+                <IconButton className='delete-button' aria-label="delete" size="large" onClick={handleClick}><DeleteIcon fontSize='inherit' /></IconButton>
+            </li>  
         </Card>
+        </div>
+      
 
         {/* <li className='card'>
             <div>
@@ -101,7 +104,7 @@ function GameCard({ game, onHandleDelete, onUpdatePatch, onDecrementPatch }) {
                 <button onClick={handleClick}>Delete</button>
             </div>
         </li> */}
-        </>
+       </>
     );
 }
 
