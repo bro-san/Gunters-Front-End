@@ -40,8 +40,9 @@ code {
   flex-direction: column;
   gap: 10px;
 }
-.fix-card{
-  border-radius: 5px;
+
+#fix-card{
+  border-radius: 15px;
 }
 
 .fix-card-background{
