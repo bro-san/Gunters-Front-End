@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Card from '@mui/material/Card';
+import { TextField } from "@mui/material";
+import CardHeader from '@mui/material/CardHeader';
+import CardMedia from '@mui/material/CardMedia';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+
 
 const GameDetail = ({onAddEgg}) => {
    const [game, setGame] = useState(null);
@@ -41,35 +48,52 @@ const GameDetail = ({onAddEgg}) => {
       }
 
       const eggDisplay = easterEggs.map(egg => {
-         return(<li>{egg}</li>)
+         return(<li key={egg}>{egg}</li>)
       })
 
    return (
    <>
-      <div>
-         <h4>{name}</h4>
-         <img src={image} alt={name} />
+   <Card id="card-details"sx={{ maxWidth: 500 }}>
+       <div>
+       <CardHeader
+        title={name}
+      />
+      <CardMedia
+        component="img"
+        height="194"
+        image={image}
+        alt={name}
+      />
       </div>
       <div>
-         <h3>Description:</h3>
-         <p>{description}</p>
+      <CardContent>
+      <h3>Description:</h3>
+        <Typography variant="body2" color="text.secondary">{description}</Typography>
+      </CardContent>
+         
+      <CardContent> 
          <h2>Easter Eggs Found:</h2>
          <ul>
             {eggDisplay}
          </ul>
          <h2>Submit a New Easter Egg!</h2>
-         <form onSubmit={handleSubmit}>
-            <input
-               type='text'
+         <form className="form-class" onSubmit={handleSubmit}>
+         <TextField
+            type="text"
+            label="Add an egg!"
                name='easterEgg'
-               placeholder='Add an egg!'
                value={eggText}
                onChange={(e) => setEggText(e.target.value)}
             />
-            <button type='submit'>Add Egg</button>
+            <button className="search-button" type='submit'>Add Egg</button>
          </form>
+      </CardContent>
+         
 
       </div>
+   </Card>
+     
+         
    </>
    );
 };

@@ -1,5 +1,8 @@
 body {
-  background-color: rgb(46, 131, 152);
+  background-image: url('https://wallpaperaccess.com/full/1752787.jpg');
+  background-repeat: no-repeat;
+  background-position-y: 25% ;
+  background-size: cover;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -11,3 +14,176 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.latest-game{
+  color: rgb(42, 42, 41);
+ padding-bottom: 8px ;
+  background-image: linear-gradient(to left, #ffb5e8, #b28dff, #dcd3ff,  #ffc9de, #6eb5ff);
+  border-radius: 20px;
+}
+
+.last-game{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+#fix-card{
+  background-image: url();
+  border-radius: 10px;
+}
+
+.cards {
+  justify-content: stretch;
+  margin: 0 auto;
+  list-style: none;
+  width: 100%;
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding-top: 100px;
+} 
+
+.card {
+  max-width: 400px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}  
+.search-input {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.nav-bar {
+  background-color: rgb(92, 94, 98);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+}
+
+.nav-title{
+  background-image: linear-gradient(to left, #ffb5e8, #b28dff, #dcd3ff,  #ffc9de, #6eb5ff);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size:  x-large;
+}
+
+.link{
+  color: white;
+  text-decoration: none;
+}
+
+.outlined-basic {
+  border-top-left-radius: 19px;
+  border-bottom-left-radius: 19px;
+  outline: none;
+  background-image: url("https://cdn.discordapp.com/attachments/988529483667607562/989621307584942080/unknown.png");
+  width: 800px;
+  color: white;
+}
+.form-class{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 15px;
+}
+.input-name{
+  color: rgb(250, 250, 251);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.form-input {
+  width: 500px;
+  background-color: white;
+  border-radius: 10px;
+}
+.submit-button{
+  background-image: linear-gradient(to left, #ffb5e8, #b28dff, #dcd3ff,  #ffc9de, #6eb5ff);
+  color: black;
+  font-weight: bold;
+  
+  font-size: large;
+  border: none;
+  border-radius: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 20px ;
+}
+
+.search-button{
+  background-image: linear-gradient(to left, #ffb5e8, #b28dff, #dcd3ff,  #ffc9de, #6eb5ff);
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  padding: 15px;
+  }
+
+  #add-egg{
+     border-radius: 15px; 
+  }
+#search-button{
+  border-top-right-radius: 19px;
+  border-bottom-right-radius: 19px;
+  background-image: linear-gradient(to left, #ffb5e8, #b28dff, #dcd3ff,  #ffc9de, #6eb5ff);
+  color: black;
+}
+#submit-button{
+  background-image: linear-gradient(to left, #ffb5e8, #b28dff, #dcd3ff,  #ffc9de, #6eb5ff);
+  color: black;
+}
+.new-game-form{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form {
+  
+  display: grid;
+  gap: 10px;
+}
+
+#card-details{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.likes-counter {
+  align-self: center;
+  font-weight: bolder;
+}
+
+.delete-button{
+  align-self: start;
+}
+
+.div-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+

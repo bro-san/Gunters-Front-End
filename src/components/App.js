@@ -5,7 +5,7 @@ import Home from "./Home"
 import Games from "./Games"
 import NewGameForm from "./NewGameForm"
 import GameDetail from "./GameDetail";
-import "../App.css"
+
 
 function App() {
   const [games, setGames] = useState([])
@@ -51,7 +51,7 @@ function App() {
   console.log("testing:", homeGame)
 
   return (
-    <div>
+    <div className="background-wrapper">
 
       <NavBar />
 
@@ -70,9 +70,9 @@ function App() {
         </Route>
 
         <Route exact path="/">
-          <Home game={homeGame}/>
+          <Home game={homeGame} onHandleDelete={handleDelete} onUpdatePatch={updatePatch} onDecrementPatch={decrementPatch}/>
         </Route>
-
+       
          <Route exact path="*">
           <h1>NOT FOUND!</h1>
         </Route> 

@@ -35,45 +35,51 @@ function NewGameForm({ onAddGame }) {
 
    return (
       <div className='new-game-form'>
-         <h2>New Game</h2>
+
          <form onSubmit={handleSubmit} className="form">
-            <label>Title:</label>
+            <h2 className="input-name">New Game:</h2>
+            <label className="input-name">Title:</label>
             <TextField
-           
-            type="text"
-            label="Title"
-             
+               className="form-input"
+               type="text"
+               label="Game name"
+
                name='name'
-               placeholder='Game name'
                value={name}
                onChange={(e) => setName(e.target.value)}
             />
-            <label>Image:</label>
+            <label className="input-name">Image:</label>
             <TextField
-               type='text'
+               className="form-input"
+               type="text"
+               label="URL"
                name='image'
                placeholder='Image URL'
                value={image}
                onChange={(e) => setImage(e.target.value)}
             />
-            <label>Likes:</label>
+            <label className="input-name">Likes:</label>
             <TextField
-               type='number'
+               className="form-input"
+               type="text"
+               label="Likes"
                name='likes'
                step='1'
                placeholder='Likes'
                value={likes}
                onChange={(e) => setLikes(parseFloat(e.target.value))}
             />
-            <label>Description:</label>
+            <label className="input-name">Description:</label>
             <TextField
-               type='text'
+               className="form-input"
+               type="text"
+               label="Description"
                name='description'
                placeholder='Game description'
                value={description}
                onChange={(e) => setDescription(e.target.value)}
             />
-            <button id="submit-button" variant="contained">Submit</button>
+            <button className="submit-button" variant="contained">Submit</button>
          </form>
       </div>
    );
