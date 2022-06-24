@@ -7,10 +7,10 @@ function NavBar() {
     <div>
        <nav className="nav-bar">
       <h1 className="nav-title">Gunters</h1>
-      <NavLink exact to="/" className='link'>
+      <NavLink exact to="/home" className='link'>
         Home
       </NavLink>
-      <NavLink exact to="/games" className='link'>
+      <NavLink exact to="/" className='link'>
         Games
       </NavLink>
       <NavLink exact to="/add" className='link'>
