@@ -53,7 +53,7 @@ const GameDetail = ({onAddEgg}) => {
 
    return (
    <>
-   <Card id="card-details"sx={{ maxWidth: 500 }}>
+   <Card id="card-details"sx={{ maxWidth: 600 }}>
        <div>
        <CardHeader
         title={name}

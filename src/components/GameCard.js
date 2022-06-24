@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
@@ -9,9 +9,15 @@ import Typography from '@mui/material/Typography';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbDownIcon from '@mui/icons-material/ThumbDown';
+import EggIcon from '@mui/icons-material/Egg';
 import {Link} from "react-router-dom"
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Switch from '@mui/material/Switch';
+
 
 function GameCard({ game, onHandleDelete, onUpdatePatch, onDecrementPatch }) {
+
+    const [toggleBackground, setToggleBackground ] = useState(true)
 
     const {name, image, likes, id } = game
     
@@ -58,16 +64,22 @@ function GameCard({ game, onHandleDelete, onUpdatePatch, onDecrementPatch }) {
             method: "DELETE"
         })
         onHandleDelete(id)
+       
     }
-
+    console.log(toggleBackground)
     return (
        <>
         <div className='card'>
-            <Card  id='fix-card' >
+            <Card  className={toggleBackground ? 'fix-card' : "fix-card-background"} >
             
                 <li >
 
-                <CardHeader title={name}></CardHeader>
+                <CardHeader title={name} action={
+                
+                     <FormControlLabel onClick={() => setToggleBackground(!toggleBackground)} control={<Switch defaultChecked />} /> }
+                    >
+                    
+                </CardHeader>
                 <CardMedia
                     component="img"
                     image={image}
@@ -76,7 +88,7 @@ function GameCard({ game, onHandleDelete, onUpdatePatch, onDecrementPatch }) {
                 />
                {/* <CardContent>
                </CardContent> */}
-                <Link to={`/${id}/GameDetail`}>Details</Link>
+               
                 <div className='div-wrapper'>
                     <IconButton id='like' variant="contained" color='success' onClick={addLikes}><ThumbUpIcon /></IconButton>
                     <IconButton id='dislike' variant="contained" color='error' onClick={subtractLikes}><ThumbDownIcon /></IconButton>
@@ -84,7 +96,7 @@ function GameCard({ game, onHandleDelete, onUpdatePatch, onDecrementPatch }) {
                 
                 <p className='likes-counter'>{likes}</p>
                 </div>
-                    
+                     <Link className='egg-button' to={`/${id}/GameDetail`}><EggIcon /></Link>
                 <IconButton className='delete-button' aria-label="delete" size="large" onClick={handleClick}><DeleteIcon fontSize='inherit' /></IconButton>
             </li>  
         </Card>
