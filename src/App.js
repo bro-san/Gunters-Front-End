@@ -57,11 +57,11 @@ function App() {
 
       <Switch>
 
-      <Route exact path="/home">
+      <Route path="/home">
           <Home game={homeGame} onHandleDelete={handleDelete} onUpdatePatch={updatePatch} onDecrementPatch={decrementPatch}/>
         </Route>
 
-        <Route path="/">
+        <Route exact path="/">
         <Games games={games} onHandleDelete={handleDelete} onUpdatePatch={updatePatch} onDecrementPatch={decrementPatch}/>
         </Route>
 
