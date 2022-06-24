@@ -21,7 +21,7 @@ function GameCard({ game, onHandleDelete, onUpdatePatch, onDecrementPatch }) {
         const updateObj = {
             likes: likes + 1
         }
-        fetch(`http://localhost:3000/games/${id}`, {
+        fetch(`https://gentle-coast-35647.herokuapp.com/games/${id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -39,7 +39,7 @@ function GameCard({ game, onHandleDelete, onUpdatePatch, onDecrementPatch }) {
             likes: likes - 1
         }
 
-        fetch(`http://localhost:3000/games/${id}`, {
+        fetch(`https://gentle-coast-35647.herokuapp.com/games/${id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -54,7 +54,7 @@ function GameCard({ game, onHandleDelete, onUpdatePatch, onDecrementPatch }) {
 
 
     function handleClick() {
-        fetch(`http://localhost:3000/games/${id}`, {
+        fetch(`https://gentle-coast-35647.herokuapp.com/games/${id}`, {
             method: "DELETE"
         })
         onHandleDelete(id)
