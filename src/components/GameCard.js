@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
+// import CardContent from '@mui/material/CardContent';
+// import CardActions from '@mui/material/CardActions';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
+// import Typography from '@mui/material/Typography';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbDownIcon from '@mui/icons-material/ThumbDown';
