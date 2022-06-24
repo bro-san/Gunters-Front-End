@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Switch, Route } from "react-router-dom";
-import NavBar from "./NavBar"
-import Home from "./Home"
-import Games from "./Games"
-import NewGameForm from "./NewGameForm"
-import GameDetail from "./GameDetail";
+import { Switch, Route } from "react-router";
+import NavBar from "./components/NavBar"
+import Home from "./components/Home"
+import Games from "./components/Games"
+import NewGameForm from "./components/NewGameForm"
+import GameDetail from "./components/GameDetail";
 
 
 function App() {
@@ -57,6 +57,10 @@ function App() {
 
       <Switch>
 
+      <Route exact path="/">
+          <Home game={homeGame} onHandleDelete={handleDelete} onUpdatePatch={updatePatch} onDecrementPatch={decrementPatch}/>
+        </Route>
+
         <Route path="/games">
         <Games games={games} onHandleDelete={handleDelete} onUpdatePatch={updatePatch} onDecrementPatch={decrementPatch}/>
         </Route>
@@ -68,14 +72,10 @@ function App() {
         <Route path="/:id/GameDetail">
           <GameDetail onAddEgg={onAddEgg}/>
         </Route>
-
-        <Route exact path="/">
-          <Home game={homeGame} onHandleDelete={handleDelete} onUpdatePatch={updatePatch} onDecrementPatch={decrementPatch}/>
-        </Route>
        
-         <Route exact path="*">
+          <Route exact path="*">
           <h1>NOT FOUND!</h1>
-        </Route> 
+        </Route>  
         
       </Switch>
 

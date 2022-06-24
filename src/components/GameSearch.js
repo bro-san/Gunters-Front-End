@@ -7,9 +7,9 @@ function GameSearch({handleSearchChanges}) {
       <div className="search-input">
         
      <TextField
-     className="outlined-basic"
+     className="search"
      type="text"
-     label="Search Game"
+      label="Search Game"
         onChange={(e) => handleSearchChanges(e)}
       />
      <Button id="search-button" variant="contained">Search</Button>
