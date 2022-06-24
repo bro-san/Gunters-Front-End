@@ -81,7 +81,9 @@ function App() {
 
     
 
+    <footer>
     <p>Unfamiliar with the title of this site? Here's your first <a href="https://readyplayerone.fandom.com/wiki/Gunter">easter egg hunt</a>.</p>
+    </footer>
     </div>
   );
 }
