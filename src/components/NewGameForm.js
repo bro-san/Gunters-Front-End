@@ -10,7 +10,7 @@ function NewGameForm({ onAddGame }) {
 
    function handleSubmit(e) {
       e.preventDefault();
-      fetch("http://localhost:3000/games", {
+      fetch("https://gentle-coast-35647.herokuapp.com/games", {
          method: "POST",
          headers: {
             "Content-Type": "application/json",

@@ -16,7 +16,7 @@ const GameDetail = ({onAddEgg}) => {
    const { id } = useParams();
 
    useEffect(() => {
-      fetch(`http://localhost:3000/games/${id}`)
+      fetch(`https://gentle-coast-35647.herokuapp.com/games/${id}`)
          .then((r) => r.json())
          .then((game) => {
             setGame(game);
@@ -31,7 +31,7 @@ const GameDetail = ({onAddEgg}) => {
    function handleSubmit(e) {
       e.preventDefault();
       const newEggs = [...easterEggs, eggText]
-      fetch(`http://localhost:3000/games/${id}`, {
+      fetch(`https://gentle-coast-35647.herokuapp.com/games/${id}`, {
          method: "PATCH",
          headers: {
             "Content-Type": "application/json",
