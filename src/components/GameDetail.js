@@ -12,6 +12,7 @@ const GameDetail = ({onAddEgg}) => {
    const [game, setGame] = useState(null);
    const [isLoaded, setIsLoaded] = useState(false);
    const [eggText, setEggText] = useState("");
+   const [eggs, setEggs] = useState ([])
 
    const { id } = useParams();
 
@@ -21,6 +22,7 @@ const GameDetail = ({onAddEgg}) => {
          .then((game) => {
             setGame(game);
             setIsLoaded(true);
+            setEggs(game.easterEggs)
          });
    }, [id]);
 
@@ -41,13 +43,16 @@ const GameDetail = ({onAddEgg}) => {
          }),
       })
          .then((r) => r.json())
-         .then((updatedGame) => onAddEgg(updatedGame))
+         .then((updatedGame) => {onAddEgg(updatedGame)
+            setEggs(updatedGame.easterEggs)
+         })
          .then(() => {
             setEggText("")
+            
          })
       }
 
-      const eggDisplay = easterEggs.map(egg => {
+      const eggDisplay = eggs.map(egg => {
          return(<li key={egg}>{egg}</li>)
       })
 
