@@ -28,7 +28,7 @@ $ npm start
 4) User can DELETE a game entry persistently from db.json backend;
 
 ## Project Status
-Not done yet. Still working on PATCHing/editing game details and easter eggs
+Still adding features
 
 ## Current App Structure
 ### Site Map / Client-side Routing
